@@ -1,11 +1,9 @@
 import React, { createContext } from 'react'
 import Link from 'next/link'
 
-export const ColoredCtx = createContext(false)
-
 class Layout extends React.Component {
   render() {
-    const { children, isColored } = this.props
+    const { children } = this.props
 
     return (
       <div className="layout">
@@ -17,8 +15,14 @@ class Layout extends React.Component {
         </Link>{' '}
         <Link href="/nocolored">
           <a>No Colored</a>
+        </Link>{' '}
+        <Link href="/nocontext">
+          <a>No Context (colored)</a>
+        </Link>{' '}
+        <Link href="/nocontext2">
+          <a>No Context (no colored)</a>
         </Link>
-        <ColoredCtx.Provider value={isColored}>{children}</ColoredCtx.Provider>
+        {children}
       </div>
     )
   }

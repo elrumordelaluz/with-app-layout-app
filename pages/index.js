@@ -1,15 +1,16 @@
-import { ColoredCtx } from '../components/layout'
+import withContext from '../context/withContext'
+import Context from '../context'
 import styles from './styles'
 
-export default () => {
+export default withContext(() => {
   return (
-    <ColoredCtx.Consumer>
+    <Context.Consumer>
       {isColored => (
         <div className={isColored && 'colored'}>
           Index
           <style jsx>{styles}</style>
         </div>
       )}
-    </ColoredCtx.Consumer>
+    </Context.Consumer>
   )
-}
+})
