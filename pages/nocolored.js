@@ -1,4 +1,4 @@
-import { ColoredCtx } from './_app'
+import { ColoredCtx } from '../components/layout'
 import styles from './styles'
 
 export default () => {

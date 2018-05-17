@@ -1,29 +1,6 @@
-import React, { createContext } from 'react'
+import React from 'react'
 import App, { Container } from 'next/app'
-import Link from 'next/link'
-
-export const ColoredCtx = createContext(false)
-
-class Layout extends React.Component {
-  render() {
-    const { children, isColored } = this.props
-
-    return (
-      <div className="layout">
-        <Link href="/index">
-          <a>Index</a>
-        </Link>{' '}
-        <Link href="/colored">
-          <a>Colored</a>
-        </Link>{' '}
-        <Link href="/nocolored">
-          <a>No Colored</a>
-        </Link>
-        <ColoredCtx.Provider value={isColored}>{children}</ColoredCtx.Provider>
-      </div>
-    )
-  }
-}
+import Layout from '../components/layout'
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, router, ctx }) {
